@@ -1,79 +1,34 @@
 import React from "react";
+import Button from "./Button";
 
-class KeyPadComponent extends React.Component {
-  render() {
-    return (
-      <div className="button">
-        <button name="C" onClick={e => this.props.onClick(e.target.name)}>
-          C
-        </button>{" "}
-        {/* Clear entire equation */}
-        <button name="(" onClick={e => this.props.onClick(e.target.name)}>
-          (
-        </button>
-        <button name=")" onClick={e => this.props.onClick(e.target.name)}>
-          )
-        </button>
-        <button name="÷" onClick={e => this.props.onClick(e.target.name)}>
-          ÷
-        </button>
-        <br />
-        <button name="7" onClick={e => this.props.onClick(e.target.name)}>
-          7
-        </button>
-        <button name="8" onClick={e => this.props.onClick(e.target.name)}>
-          8
-        </button>
-        <button name="9" onClick={e => this.props.onClick(e.target.name)}>
-          9
-        </button>
-        <button name="x" onClick={e => this.props.onClick(e.target.name)}>
-          x
-        </button>
-        <br />
-        <button name="4" onClick={e => this.props.onClick(e.target.name)}>
-          4
-        </button>
-        <button name="5" onClick={e => this.props.onClick(e.target.name)}>
-          5
-        </button>
-        <button name="6" onClick={e => this.props.onClick(e.target.name)}>
-          6
-        </button>
-        <button name="-" onClick={e => this.props.onClick(e.target.name)}>
-          -
-        </button>
-        <br />
-        <button name="1" onClick={e => this.props.onClick(e.target.name)}>
-          1
-        </button>
-        <button name="2" onClick={e => this.props.onClick(e.target.name)}>
-          2
-        </button>
-        <button name="3" onClick={e => this.props.onClick(e.target.name)}>
-          3
-        </button>
-        <button name="+" onClick={e => this.props.onClick(e.target.name)}>
-          +
-        </button>
-        <br />
-        <button name="Ce" onClick={e => this.props.onClick(e.target.name)}>
-          Ce
-        </button>{" "}
-        {/* Clear current entry */}
-        <button name="0" onClick={e => this.props.onClick(e.target.name)}>
-          0
-        </button>
-        <button name="." onClick={e => this.props.onClick(e.target.name)}>
-          .
-        </button>
-        <button name="=" onClick={e => this.props.onClick(e.target.name)}>
-          =
-        </button>
-        <br />
-      </div>
-    );
-  }
-}
+const KeyPadComponent = ({ onClick }) => (
+  <div className="button">
+    <Button name="C" onClick={onClick} />
+    <Button name="(" onClick={onClick} />
+    <Button name=")" onClick={onClick} />
+    <Button name="/" onClick={onClick} />
+    <br />
+    <Button name="7" onClick={onClick} />
+    <Button name="8" onClick={onClick} />
+    <Button name="9" onClick={onClick} />
+    <Button name="*" onClick={onClick} />
+    <br />
+    <Button name="4" onClick={onClick} />
+    <Button name="5" onClick={onClick} />
+    <Button name="6" onClick={onClick} />
+    <Button name="-" onClick={onClick} />
+    <br />
+    <Button name="1" onClick={onClick} />
+    <Button name="2" onClick={onClick} />
+    <Button name="3" onClick={onClick} />
+    <Button name="+" onClick={onClick} />
+    <br />
+    <Button name="Ce" onClick={onClick} />
+    <Button name="0" onClick={onClick} />
+    <Button name="." onClick={onClick} />
+    <Button name="=" onClick={onClick} />
+    <br />
+  </div>
+);
 
 export default KeyPadComponent;

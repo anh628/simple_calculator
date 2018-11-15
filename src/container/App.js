@@ -5,35 +5,31 @@ import * as math from "mathjs";
 
 class App extends React.Component {
   state = {
-    result: ""
+    result: []
   };
 
-  calculate = () => {
-    let calculation = math.eval(this.state.result);
-    this.setState({ result: calculation });
-  };
-
-  reset = () => {
-    this.setState({ result: "" });
-  };
-
-  backspace = () => {
-    this.setState({ result: this.state.result.slice(0, -1) });
-  };
-
-  onClick = button => {
-    if (button === "=") {
-      this.calculate();
-    } else if (button === "C") {
-      this.reset();
-    } else if (button === "CE") {
-      this.backspace();
-    } else {
-      let newResult = this.state.result + button;
-      this.setState({
-        result: newResult
-      });
+  calculate = equation => {
+    try {
+      equation = equation.join("");
+      equation = math.eval(equation);
+      return math.format(equation, 5);
+    } catch {
+      return "Error";
     }
+  };
+
+  onClick = buttonName => {
+    let equation = [...this.state.result];
+    if (buttonName === "=") {
+      equation = [this.calculate(equation)];
+    } else if (buttonName === "C") {
+      equation = [];
+    } else if (buttonName === "Ce") {
+      equation.pop();
+    } else {
+      equation.push(buttonName);
+    }
+    this.setState({ result: equation });
   };
 
   render() {

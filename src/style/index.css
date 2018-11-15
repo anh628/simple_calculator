@@ -13,12 +13,11 @@
   margin: auto;
 }
 
-.button {
-  display: block;
-}
-
 button {
   width: 99px;
   height: 60px;
   font-size: 30px;
+  background-color: #b5caeb;
+  border: none;
+  font-family: "Arial", sans-serif;
 }
